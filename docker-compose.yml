@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  transaction-mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=transaction
+      - MYSQL_USER=transaction-user
+      - MYSQL_PASSWORD=password
+    ports:
+      - 3307:3306
+
+#  transaction:
+#    image: zupacademy/transaction
+#    restart: on-failure
+#    depends_on:
+#      - proposta-mysql
+#    ports:
+#      - 8080:8080
+#    environment:
+#      - DATABASE_HOST=transaction-mysql
+#      - DATABASE_USER=transaction-user
+#      - DATABASE_PASSWORD=password
+#      - DATABASE_NAME=transaction
+#      - DATABASE_PORT=3307
