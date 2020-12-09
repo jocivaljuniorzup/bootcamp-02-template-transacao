@@ -40,7 +40,6 @@ public class TransactionListenerService {
         }
 
         Transaction transaction = transactionEvent.toModel(card);
-        transaction.toString();
         transactionRepository.save(transaction);
         logger.info("New transaction received: " + transactionEvent);
     }
